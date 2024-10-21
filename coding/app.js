@@ -7,6 +7,8 @@ function update(i) {
     let javascriptCode=document.getElementById("javascriptCode").value;
     let text=htmlCode+"<style>"+cssCode+"</style>"+"<scri"+"pt>"+javascriptCode+"</scri"+"pt>";
     let iframe=document.getElementById('viewer').contentWindow.document;
+    let w=document.appendChild(document.createElement('p'));
+    w.textContent = "H";
     iframe.open();
     iframe.write(text);
     iframe.close();
@@ -17,6 +19,8 @@ function update(i) {
         let htmlCode=document.getElementById("htmlCode").value;
         let html=htmlCode.slice(0,htmlCode.length);
         document.getElementById("htmlCode").value=html;
+        let w=document.appendChild(document.createElement('p'));
+        w.textContent = "W";
         j=1;
 
     }
