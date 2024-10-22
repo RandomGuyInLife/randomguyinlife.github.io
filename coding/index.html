@@ -1,9 +1,34 @@
 <!DOCTYPE html>
  <html>
  <head>
-    <title>Real-Time Editor | By Someone</title>
+    <title>Real-Time Editor | By Someone p5</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script defer type="text/javascript" src="app.js"></script>
+    <script type="text/javascript">
+        var j=0;
+        //Function for live Rendering
+        function update(i) {
+            if(i==0){
+                let htmlCode=document.getElementById("htmlCode").value;
+                let cssCode=document.getElementById("cssCode").value;
+                let javascriptCode=document.getElementById("javascriptCode").value;
+                let text=htmlCode+"<style>"+cssCode+"</style>"+"<scri"+"pt>"+javascriptCode+"</scri"+"pt>";
+                let iframe=document.getElementById('viewer').contentWindow.document;
+                iframe.open();
+                iframe.write(text);
+                iframe.close();
+            }
+
+        else if(i==1){
+
+            let htmlCode=document.getElementById("htmlCode").value;
+            let html=htmlCode.slice(0,htmlCode.length);
+            document.getElementById("htmlCode").value=html;
+            j=1;
+
+        }
+    }
+
+    </script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.0.0/split.min.js" integrity="sha512-tTsZnBXEzNdEaqUO9Ok8fUofS73xieiBa54pD/sxOSvayIgItM9MmEM0CnUjA13LDnJT22sfwmjf20+Bo2174g==" crossorigin="anonymous"></script>
  </head>
