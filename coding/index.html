@@ -32,15 +32,24 @@
      var t = "", e = value.split(" ");
      for (var i = 0; i < e.length;) {
       const g = e[i].split(".");
-      if (g.length = 1) {
-       if (g == "const" || g == "const ") {
-        t += "<span style=\"color: purple;\">" + g "</span>"
+      console.log(g, g.length);
+      if (g.length === 1) {
+       if (g[0] === "const") {
+        t += "<span style=\"color: #d332df;\">" + g + " </span>"
+       } else {
+        if (e[i-1] === "const") {
+          t += "<span style=\"color: #fcbe24;\">" + g + " </span>"
+        } else {
+          t += g + " ";
+        }
        }
       } else {
-       return;
+        t += g + " ";
       }
+      i++;
      }
-     document.body.appendChil(document.createElement('p')).innerHTML = t;
+     console.log(t);
+     document.body.appendChild(document.createElement('p')).innerHTML = t;
     }
 
     </script>
