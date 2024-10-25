@@ -27,6 +27,20 @@
 
         }
     }
+    function editJava(value) {
+     var t = "", e = value.split(" ");
+     for (var i = 0; i < e.length;) {
+      const g = e[i].split(".");
+      if (g.length = 1) {
+       if (g == "const" || g == "const ") {
+        t += "<span style=\"color: purple;\">" + g "</span>"
+       }
+      } else {
+       return;
+      }
+     }
+     document.body.appendChil(document.createElement('p')).innerHTML = t;
+    }
 
     </script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
