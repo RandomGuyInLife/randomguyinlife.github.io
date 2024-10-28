@@ -17,7 +17,6 @@
                 iframe.write(text);
                 iframe.close();
                 console.warn("Hi");
-                editJava(javascriptcode);
             }
 
         else if(i==1){
@@ -26,33 +25,9 @@
             let html=htmlCode.slice(0,htmlCode.length);
             document.getElementById("htmlCode").value=html;
             j=1;
-         editJava(javascriptcode);
 
         }
-    }
-    function editJava(value) {
-     var t = "", e = value.split(" ");
-     for (var i = 0; i < e.length;) {
-      const g = e[i].split(".");
-      console.log(g, g.length);
-      if (g.length === 1) {
-       if (g[0] === "const") {
-        t += "<span style=\"color: #d332df;\">" + g + " </span>"
-       } else {
-        if (e[i-1] === "const") {
-          t += "<span style=\"color: #fcbe24;\">" + g + " </span>"
-        } else {
-          t += g + " ";
         }
-       }
-      } else {
-        t += g + " ";
-      }
-      i++;
-     }
-     console.warn(t);
-     document.body.appendChild(document.createElement('p')).innerHTML = t;
-    }
 
     </script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
